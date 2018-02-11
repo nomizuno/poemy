@@ -107,7 +107,7 @@ header{
   width: 100%;
   position: absolute;
   top:431px;
-  background-color: black;
+  
   
 }
 .top-message h2{
@@ -125,10 +125,13 @@ header{
 /* about ================================ */
 .about-main{
   padding:180px 8% 0;
+
+
+.about-content{
+   padding:10px 10px;
 }
 
-.about-main p{
-	 display:none;
+
 }
 
 /* フォーム================================ */

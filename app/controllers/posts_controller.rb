@@ -9,17 +9,22 @@ class PostsController < ApplicationController
 
 	end
 
-def create
-  	@post=Post.new(content: params[:content],
-                    user_id: @current_user.id)
-    @post.save
-  if @post.save
+	def create
+		@post=Post.new(content: params[:content],
+			user_id: @current_user.id)
+		@post.save
+	  if @post.save
       #保存できた場合
-      redirect_to("/posts/index")
-      flash[:notice] ="投稿できたよ"
-    else
-      render("/posts/new")
+        redirect_to("/posts/index")
+        flash[:notice] ="投稿できたよ"
+      else
+  	    render("/posts/new")
+      end
     end
-  end
+
+
+    def show
+     @post = Post.find_by(id: params[:id])
+    end
 
 end
