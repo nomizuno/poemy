@@ -3,13 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .posts-show-item {
-	margin: 0 0 100px 0;
+margin: 0 0 100px 0;
 }
 
 .posts-comments {
-	margin-top: 15px;
+margin-top: 15px;
 
-	span{
-	color: gray;
-	}
+span{
+color: gray;
+}
+}
+
+.post-word {
+
+h2{
+display: inline-block;
+}
+
+h3{
+display: inline-block;
+}
+
 }
