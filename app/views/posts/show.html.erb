@@ -9,11 +9,18 @@
 				</h2>
 			</div>
 
-			<div class ="posts-coments">
-				<p>
-				 	<%= @comment.content %>
-				 </p>
+			
+			<% @comments.each do |comment| %>
+			<div class ="posts-comments">
+				<% if comment %>
+				<p><%= comment.content %></p>
+				<% else %>
+					<p>まだ”意味”がありません。</p>
+				<% end %>
 			</div>
+			<% end %>
+			
+
 		</div>
 
 		<div class ="form comment-form">
@@ -21,7 +28,7 @@
 			<div class="form">
 				<div class="form-body">
 
-					<textarea name="content"><%= @comment.content %></textarea>
+					<textarea name="content"></textarea>
 					<input type ="submit" value="投稿">
 				</div>
 			</div>
