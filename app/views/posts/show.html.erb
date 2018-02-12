@@ -20,14 +20,18 @@
 				<%= link_to(comment.content, "/users/#{comment.user_id}") %>
 				
 				<% if Like.find_by(user_id: @current_user.id, comment_id: comment.id) %>
-				  <%= link_to("/likes/#{comment.id}/destroy",{method:"post"}) do %>
-				  <span class = "fa fa-heart like-btn"></span>
-				  <% end %>
-       <% else %>
-				  <%= link_to("/likes/#{comment.id}/create",{method:"post"}) do %>
-				  <span class = "fa fa-heart like-btn-unlike"></span>
-				  <% end %>
+				<%= link_to("/likes/#{comment.id}/destroy",{method:"post"}) do %>
+				<span class = "fa fa-heart like-btn"></span> 
+
 				<% end %>
+				<% else %>
+				<%= link_to("/likes/#{comment.id}/create",{method:"post"}) do %>
+				<span class = "fa fa-heart like-btn-unlike"></span>
+
+				<% end %>
+				<% end %>
+				<% @likes_count = Like.where(comment_id: comment.id).count %>
+				<%= @likes_count %>
 			</div>
 			<% end %>
 			

@@ -23,15 +23,19 @@ display: inline-block;
 h3{
 display: inline-block;
 }
-}
 
 
-.fa like-btn {
+
+
+/* posts/show いいね!ボタン ================================ */
+	
+.like-btn {
   color: red;
 }
 
-.fa like-btn-unlike {
-  color: #ff2581;
+.like-btn-unlike {
+  color: gray;
 }
 
+}
 
