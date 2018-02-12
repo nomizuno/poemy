@@ -12,6 +12,25 @@
 			    <% end %>
 			</div>
 		</div>
+
+    
+		<% @comments.each do |comment| %>
+		<div class="posts-index-item">
+			
+			<div class = "user-left" >
+			<h3></h3>
+			</div>
+			
+			<div class ="user-right" >
+				<%= link_to(comment.content,"/posts/#{comment.post_id}") %>
+			</div>
+
+
+		</div>
+		<% end %>
+
+
+
 	</div>
 
 </div>
