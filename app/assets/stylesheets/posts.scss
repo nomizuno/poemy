@@ -9,9 +9,7 @@ margin: 0 0 100px 0;
 .posts-comments {
 margin-top: 15px;
 
-span{
-color: gray;
-}
+
 }
 
 .post-word {
@@ -29,12 +27,12 @@ display: inline-block;
 
 /* posts/show いいね!ボタン ================================ */
 	
-like-btn {
-  color: red;
+.like-btn {
+  color: #8899a6;
 }
 
-like-btn-unlike {
-  color: gray;
+.like-btn-unlike {
+  color: #ff2581;
 }
 
 }
