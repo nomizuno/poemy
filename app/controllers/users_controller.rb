@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     end
   end
 
-def edit
+  def edit
   	@user = User.find_by(id: params[:id])
   	@user.save
   end
@@ -40,7 +40,7 @@ def edit
     end
 
     if @user.save
-    	redirect_to("/users/index")
+    	redirect_to("/users/#{@user.id}")
       flash[:notice] ="保存できたよ"
     else
     	render("/users/edit")
