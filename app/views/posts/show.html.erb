@@ -13,7 +13,7 @@
 			<% @comments.each do |comment| %>
 			<div class ="posts-comments">
 				<% if comment %>
-				<p><%= comment.content %></p>
+				 <%= link_to(comment.content, "/users/#{comment.user_id}") %>
 				<% else %>
 					<p>まだ”意味”がありません。</p>
 				<% end %>
