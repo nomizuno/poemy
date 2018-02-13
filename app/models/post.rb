@@ -4,4 +4,5 @@ class Post < ApplicationRecord
   validates :user_id, {presence: true}
   validates :reading, {presence: true, uniqueness: true}
 
+
 end
