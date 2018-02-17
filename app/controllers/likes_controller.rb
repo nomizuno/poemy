@@ -8,6 +8,8 @@ class LikesController < ApplicationController
 			)
 		@like.save
 		@comment = Comment.find_by(id: params[:comment_id])
+		@comment.likes_count = Like.where(comment_id: params[:comment_id]).count
+		@comment.save
 		@post = Post.find_by(id: @comment.post_id)
 		redirect_to("/posts/#{@post.id}")
 	end
@@ -19,6 +21,8 @@ class LikesController < ApplicationController
 			)
 		@like.destroy
 		@comment = Comment.find_by(id: params[:comment_id])
+		@comment.likes_count = Like.where(comment_id: params[:comment_id]).count
+		@comment.save
 		@post = Post.find_by(id: @comment.post_id)
 		redirect_to("/posts/#{@post.id}")
 	end
