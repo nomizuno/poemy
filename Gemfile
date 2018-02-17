@@ -41,6 +41,11 @@ group :development, :test do
   gem 'sqlite3'
   gem 'byebug','9.0.6',platforms: [:mri, :mingw, :x64_mingw]
 
+  gem 'pry-rails'
+  gem 'pry-doc' 
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+
   # Adds support for Capybara system testing and selenium driver
 end
 
