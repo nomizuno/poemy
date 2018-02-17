@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
       redirect_to("/posts/#{@comment.post_id}")
       flash[:notice] ="投稿できたよ"
   else
-  	render("/posts/index")
+  	redirect_to("/posts/#{params[:id]}")
   end
 end
 
