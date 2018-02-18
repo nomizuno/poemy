@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 		if @comment.save
       #保存できた場合
       redirect_to("/posts/#{@comment.post_id}")
-      flash[:notice] ="投稿できたよ"
+      flash[:notice] ="投稿できたよ!"
   else
   	redirect_to("/posts/#{params[:id]}")
   end
