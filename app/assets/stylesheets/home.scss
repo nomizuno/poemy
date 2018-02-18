@@ -94,34 +94,87 @@ header{
 
 /* top ================================ */
 .top-main{
-	padding:100px 0 100px;
+	padding:0px 0 0px;
 	text-align: center;
-  background-color:white;
 }
+.top-wrapper{
+  background-image:url("../assets/jungle.jpeg");
+  height:700px;
+  background-size:cover;
+  color:white;
+  position:relative;
+}
+.top-wrapper::before{
+  background-color:rgba(0,0,0,0.3);
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  content: ' ';
+  }
 .top-message{
-  position: relative;
-  z-index:1;
-}
-.background{
-  height: 500px;
-  width: 100%;
+  padding-top:100px;
   position: absolute;
-  top:431px;
-  
-  
+  width:100%;
+}
+.top-message h1{
+  font-size:200px;
+  font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック"; font-weight: bold;
 }
 .top-message h2{
   font-size:40px;
   font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック"; font-weight: bold;
 }
-.top-message span{
-  color: white;
+.middle-message{
+  font-size:50px;
+  font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック"; font-weight: bold;
+  margin-top:10px;
 }
-.top-message img{
-  padding:10px 0px;
-  height: 500px;
-}
+.top-contents{
+  padding:30px 50px 0px 50px;
 
+}
+.top-content{
+  width:100%;
+  height:300px;
+}
+.img-left{
+  width:25%;
+  float:left;
+}
+.img-right{
+  width:25%;
+  float:right;
+}
+.content-message-left{
+  font-size:20px;
+  font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック"; font-weight: bold;
+  line-height:50px;
+  float:left;
+  text-align:left;
+  padding-top:30px;
+  padding-left:20px;
+}
+.content-message-right{
+  font-size:20px;
+  font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック"; font-weight: bold;
+  line-height:50px;
+  float:right;
+  text-align:right;
+  padding-top:30px;
+  padding-right:20px;
+}
+.blank2{
+  width:25%;
+  height:100px;
+  float:left;
+}
+.blank3{
+  width:25%;
+  height:100px;
+  float:right;
+}
 /* about ================================ */
 .about-main{
   padding:180px 8% 0;
