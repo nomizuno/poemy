@@ -9,6 +9,11 @@ class PostsController < ApplicationController
 
 	end
 
+	def recent
+		@posts = Post.all.order(created_at: :desc)
+
+	end
+
 	def create
 		@post=Post.new(content: params[:content],
 			user_id: @current_user.id,
