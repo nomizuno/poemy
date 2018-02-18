@@ -1,6 +1,8 @@
 <div class ="main posts-index">
 	<div class="container">
-		<h1 class ="form-heading">索引</h1>
+		<ul class="user-tabs">
+			<li class="active"><%= link_to("索引","/posts/index") %></li>
+		</ul>
 		<% @posts.each do |post| %>
 		
 		<div class="posts-index-item">
