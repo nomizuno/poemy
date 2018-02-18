@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   
   def ensure_current_user
     if @current_user.id != params[:id].to_i
-      flash[:notice] = "権限がありません"
+      flash[:notice] = "入れないみたい"
       redirect_to("/posts/index")
     end
   end
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
    if @user.save
     session[:user_id]=@user.id
     redirect_to("/users/#{@user.id}")
-    flash[:notice] ="登録できたよ"
+    flash[:notice] ="登録できたよ！"
   else
    render("/users/new")
  end
@@ -57,7 +57,7 @@ end
 
 if @user.save
  redirect_to("/users/#{@user.id}")
- flash[:notice] ="保存できたよ"
+ flash[:notice] ="保存できたよ！"
 else
  render("/users/edit")
 end
@@ -69,12 +69,12 @@ end
 def login
   @user = User.find_by(email: params[:email], password: params[:password])
   if @user
-    flash[:notice]= "ログインしました"
+    flash[:notice]= "ログインしたよ！"
     session[:user_id]=@user.id
 
     redirect_to("/posts/index")
   else
-    @error_message = "メールアドレスまたはパスワードが間違っています"
+    @error_message = "メールアドレスかパスワードが間違ってない？"
     @email =params[:email]
     @password =params[:password]
     render("users/login_form")
