@@ -27,6 +27,7 @@ class UsersController < ApplicationController
    @user =User.new(name: params[:name], 
     email: params[:email],
     password: params[:password],
+    poemy_id: params[:poemy_id],
     image_name: "default_user.jpg"
     )
 
