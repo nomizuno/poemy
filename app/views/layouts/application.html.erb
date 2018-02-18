@@ -18,10 +18,23 @@
   <header>
     <div class="header-logo">
       <%= link_to("Poemy","/") %>
+
+
     </div>
 
     <ul class="header-menus">
-     
+
+      <li>
+        <div id="nav-search">
+        <%= form_tag '/posts/index', :method => 'get' do %>
+            <p>
+                <%= text_field_tag :search, params[:search] %>
+                <%= submit_tag "検索", :name => nil %>
+            </p>
+        <% end %>
+    </div><!-- nav-search -->
+      </li>
+
      <li>
       <%= link_to("使い方","/about") %>
     </li> 
@@ -43,7 +56,7 @@
     </li>
 
     <li>
-     
+
      <% if @current_user  %>
      <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
      <% end %>

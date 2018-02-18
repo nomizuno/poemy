@@ -1,11 +1,16 @@
 class PostsController < ApplicationController
 
+   # GET /posts
+   # GET /ps.json
+   
 	def new
 		@post = Post.new
 	end
 
 	def index
-		@posts = Post.all.order(reading: :asc)
+		 @posts = Post.search(params[:search])
+
+		
 
 	end
 
