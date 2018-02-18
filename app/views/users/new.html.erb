@@ -14,6 +14,8 @@
 				<%= form_tag("/users/create")do %>
 				<p>ユーザー名</p>
 				<input name ="name" value="<%= @user.name %>">
+				<p>poemy-ID</p>
+				<input name ="poemy_id" value="<%= @user.poemy_id %>">
 				<p>メールアドレス</p>
 				<input name ="email" value="<%= @user.email %>">
 				<p>パスワード</p>
