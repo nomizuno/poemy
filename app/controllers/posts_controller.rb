@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 	end
 
 	def recent
-		@posts = Post.all.order(created_at: :desc)
+		@posts = Post.all.order(created_at: :desc).limit(5)
 
 	end
 
