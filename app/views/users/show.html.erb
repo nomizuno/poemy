@@ -5,6 +5,7 @@
 		<div class ="user">
 			<img src= "<%= "/user_images/#{@user.image_name}" %>" >
 			<h2><%= @user.name %></h2>
+			<h3>poemy-id:<%= @user.poemy_id %></h3>
 			<p>ことば投稿数&nbsp<span class ="count"><%= @post_count %></span></p>
 			<p>意味投稿数&nbsp<span class ="count"><%= @comments_count %></span></p>
 			<div class ="user-edit-bottun">
