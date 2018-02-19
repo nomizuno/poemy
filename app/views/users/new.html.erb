@@ -1,6 +1,6 @@
 <div class="main users-new">
 	<div class="container">
-		<h1 class="form-heading">New poemer</h1>
+		<h1 class="form-heading">入園する</h1>
 
 		<div class="form users-form">
 			<div class="form-body">
@@ -14,7 +14,7 @@
 				<%= form_tag("/users/create")do %>
 				<p>ユーザー名</p>
 				<input name ="name" value="<%= @user.name %>">
-				<p>poemy-ID</p>
+				<p>ID</p>
 				<input name ="poemy_id" value="<%= @user.poemy_id %>">
 				<p>メールアドレス</p>
 				<input name ="email" value="<%= @user.email %>">
@@ -25,6 +25,8 @@
 			</div>
 		</div>
 
-
+    <%= link_to("アカウントをお持ちの方はこちら","/login") %>
+   
 	</div>
+
 </div>

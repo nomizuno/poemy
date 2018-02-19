@@ -5,11 +5,13 @@
 		<div class ="user">
 			<img src= "<%= "/user_images/#{@user.image_name}" %>" >
 			<h2><%= @user.name %></h2>
-			<h3>poemy-id:<%= @user.poemy_id %></h3>
+			<h3>id:<%= @user.poemy_id %></h3>
 			<div class ="user-edit-bottun">
+			  <% if session[:user_id] %>
 				<% if @user.id == @current_user.id %>
 				<%= link_to("編集","/users/#{@user.id}/edit") %>
 				<% end %>
+			<% end %>
 			</div>
 			<p>ことば投稿数&nbsp<span class ="count"><%= @post_count %></span></p>
 			<p>意味投稿数&nbsp<span class ="count"><%= @comments_count %></span></p>
