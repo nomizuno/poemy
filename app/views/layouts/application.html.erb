@@ -39,13 +39,13 @@
       <%= link_to("使い方","/about") %>
     </li> 
 
-    
-    
-    
-    <% if session[:user_id] %>
     <li>
       <%= link_to("索引","/posts/index") %>
     </li>
+    
+    
+    <% if session[:user_id] %>
+    
     <li>
       <%= link_to("ことば投稿","/posts/new") %>
     </li>
