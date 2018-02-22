@@ -16,13 +16,15 @@ class PostsController < ApplicationController
            redirect_to("/posts/new")
          end
 		
-         
-
-	end
+    end
 
 	def recent
 		@posts = Post.all.order(created_at: :desc).limit(5)
 
+	end
+
+	def popular
+		@comments = Comment.all.order("likes_count desc").limit(5)
 	end
 
 	
