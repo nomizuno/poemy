@@ -8,9 +8,15 @@ class PostsController < ApplicationController
 	end
 
 	def index
+        
 		 @posts = Post.search(params[:search])
-
 		
+         if @posts.empty?
+         	flash[:notice] ="まだデータがないみたい！投稿してみたら？"
+           redirect_to("/posts/new")
+         end
+		
+         
 
 	end
 
