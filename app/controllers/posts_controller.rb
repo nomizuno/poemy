@@ -3,6 +3,8 @@ class PostsController < ApplicationController
    # GET /posts
    # GET /ps.json
    
+   # before_action :authenticate_user,{only:[:new]}
+
 	def new
 		@post = Post.new
 	end
