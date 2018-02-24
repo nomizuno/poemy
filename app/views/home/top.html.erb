@@ -1,11 +1,11 @@
 <div class="main top-main"> 
   <div class="top-wrapper">
   	<div class="top-message">
-      <h2>ことばが変われば、世界も変わる</h2>
-      <h1>ことぶつえん</h1>
+      <h4>ことばが変われば、世界も変わる</h4>
+      <h2>ことぶつえん</h2>
 
       <div id="nav-search">
-        <h2>ことばを調べる</h2>
+        <h4>ことばを調べる</h4>
         <%= form_tag '/posts/index', :method => 'get' do %>
         <p>
           <%= text_field_tag :search, params[:search] ,placeholder: '例）人生'%>
