@@ -1,6 +1,6 @@
 
 <div class ="main posts-show">
-	<div class ="container">
+	<div class ="show-contaniner">
 		
 		<div class ="posts-show-item">
 			<div class ="post-word">
@@ -13,10 +13,8 @@
 
 			</div>
 
-			
 			<% @comments.each do |comment| %>
 			<div class ="posts-comments">
-
 				<%= link_to(comment.content, "/users/#{comment.user_id}") %>
 
 				<% if session[:user_id] %>
@@ -38,7 +36,7 @@
 				<% end %>
 				<% @likes_count = Like.where(comment_id: comment.id).count %>
 				<%= @likes_count %>
-
+       
 			</div>
 			
 			<% end %>
