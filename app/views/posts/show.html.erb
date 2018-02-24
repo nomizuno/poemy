@@ -39,7 +39,9 @@
 				<% end %>
 				<% @likes_count = Like.where(comment_id: comment.id).count %>
 				<%= @likes_count %>
-
+				<% if comment.user_id == @current_user.id %>
+                  <%= link_to("削除","/comments/#{comment.id}/destroy",{method:"post"}) %>
+                <% end %>
 			</div>
 			
 			<% end %>
