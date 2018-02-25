@@ -16,33 +16,36 @@
 
 			
 			<% @comments.each do |comment| %>
-			<div class ="posts-comments">
+			  <div class ="posts-comments">
 
-				<%= link_to(comment.content, "/users/#{comment.user_id}") %>
+				  <%= link_to(comment.content, "/users/#{comment.user_id}") %>
 
-				<% if session[:user_id] %>
-				<% if Like.find_by(user_id: @current_user.id, comment_id: comment.id) %>
-				<%= link_to("/likes/#{comment.id}/destroy",{method:"post"}) do %>
-				<span class = "fa fa-heart like-btn"></span> 
-				<% end %>
-				<% else %>
-				<%= link_to("/likes/#{comment.id}/create",{method:"post"}) do %>
-				<span class = "fa fa-heart like-btn-unlike"></span>
-				<% end %>
-				<% end %>
+				  <% if session[:user_id] %>
+				    <% if Like.find_by(user_id: @current_user.id, comment_id: comment.id) %>
+				      <%= link_to("/likes/#{comment.id}/destroy",{method:"post"}) do %>
+				        <span class = "fa fa-heart like-btn"></span> 
+				      <% end %>
+				    <% else %>
+				      <%= link_to("/likes/#{comment.id}/create",{method:"post"}) do %>
+				        <span class = "fa fa-heart like-btn-unlike"></span>
+				      <% end %>
 
-				<% end %>
-				<% if session[:user_id] == nil  %>
-				<%= link_to("/users/signup") do %>
-				<span class = "fa fa-heart like-btn"></span> 
-				<% end %>
-				<% end %>
-				<% @likes_count = Like.where(comment_id: comment.id).count %>
-				<%= @likes_count %>
-				<% if comment.user_id == @current_user.id %>
-                  <%= link_to("削除","/comments/#{comment.id}/destroy",{method:"post"}) %>
-                <% end %>
-			</div>
+				    <% end %>
+
+            <% if comment.user_id == @current_user.id %>
+              <%= link_to("削除","/comments/#{comment.id}/destroy",{method:"post"}) %>
+            <% end %>
+				  <% else %>
+			
+				    <%= link_to("/users/signup") do %>
+				      <span class = "fa fa-heart like-btn"></span> 
+				    <% end %>
+				
+				    <% @likes_count = Like.where(comment_id: comment.id).count %>
+				    <%= @likes_count %>
+				   
+          <% end %>
+			  </div>
 			
 			<% end %>
 			
