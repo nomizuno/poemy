@@ -4,37 +4,33 @@
 		
 		<div class ="posts-show-item">
 			<div class ="post-word">
-				<h2>
-					【<%= @post.content %>】
-				</h2>
 				<h3>
 					<%= @post.reading %>
 				</h3>
+				<h2>
+					【<%= @post.content %>】
+				</h2>
+				
 
 			</div>
 
 			<% @comments.each do |comment| %>
 			  <div class ="posts-comments">
 
-				<%= link_to(comment.content, "/users/#{comment.user_id}") %>
+				  <%= link_to(comment.content, "/users/#{comment.user_id}") %>
 
-				<% if session[:user_id] %>
-				<% if Like.find_by(user_id: @current_user.id, comment_id: comment.id) %>
-				<%= link_to("/likes/#{comment.id}/destroy",{method:"post"}) do %>
-				<span class = "fa fa-heart like-btn"></span> 
-				<% end %>
-				<% else %>
-				<%= link_to("/likes/#{comment.id}/create",{method:"post"}) do %>
-				<span class = "fa fa-heart like-btn-unlike"></span>
-				<% end %>
-				<% end %>
+				  <% if session[:user_id] %>
+				    <% if Like.find_by(user_id: @current_user.id, comment_id: comment.id) %>
+				      <%= link_to("/likes/#{comment.id}/destroy",{method:"post"}) do %>
+				        <span class = "fa fa-heart like-btn"></span> 
+				      <% end %>
+				    <% else %>
+				      <%= link_to("/likes/#{comment.id}/create",{method:"post"}) do %>
+				        <span class = "fa fa-heart like-btn-unlike"></span>
+				      <% end %>
 
-				<% end %>
-				<% if session[:user_id] == nil  %>
-				<%= link_to("/users/signup") do %>
-				<span class = "fa fa-heart like-btn"></span> 
-				<% end %>
-				<% end %>
+
+				    <% end %>
 
             <% if comment.user_id == @current_user.id %>
               <%= link_to("削除","/comments/#{comment.id}/destroy",{method:"post"}) %>
@@ -55,6 +51,7 @@
 		</div>
    
     <% if session[:user_id] %>
+    
 		<div class ="form comment-form">
 			
 			<%= form_tag("/comments/#{@post.id}/create")do %>
@@ -73,6 +70,7 @@
 		<% else %>
 		<div class = "Induction" >
 		<%= link_to("投稿してみる?","/users/signup") %>
+		
 		</div>
     <% end %>
 
