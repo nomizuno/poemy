@@ -2,29 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.posts-show-item {
-margin: 0 0 100px 0;
+.show-container{
+  max-width: 600px;
+  margin:0px;
+  clear:both;
+
 }
+.posts-show-item {
+margin: 50px 100px 100px 100px;
+background-image: url("../assets/wordpage_background2.png");
+background-size:contain;
+background-repeat:no-repeat;
+height: 900px;
 
+}
 .posts-comments {
-margin-top: 15px;
-
-
+padding-top:0px;
+text-align: center;
+font-size:10px;
+padding-top:10px;
+	
 }
 
 .post-word {
-
+color:white;
+text-align:center;
 h2{
-display: inline-block;
+padding-top: 290px;
+font-size:70px;
+margin:0;
 }
 
 h3{
-display: inline-block;
-}
-
-p{
-	display: inline-block;
-	color: gray;
+margin:0;
+padding-top:0px;
+font-size:30px;
 }
 
 

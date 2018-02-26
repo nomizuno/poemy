@@ -1,6 +1,6 @@
 
 <div class ="main posts-show">
-	<div class ="container">
+	<div class ="show-contaniner">
 		
 		<div class ="posts-show-item">
 			<div class ="post-word">
@@ -14,7 +14,6 @@
 
 			</div>
 
-			
 			<% @comments.each do |comment| %>
 			  <div class ="posts-comments">
 
@@ -29,6 +28,7 @@
 				      <%= link_to("/likes/#{comment.id}/create",{method:"post"}) do %>
 				        <span class = "fa fa-heart like-btn-unlike"></span>
 				      <% end %>
+
 
 				    <% end %>
 
@@ -46,8 +46,6 @@
 				   
           <% end %>
 			  </div>
-			
-			<% end %>
 			
 
 		</div>
