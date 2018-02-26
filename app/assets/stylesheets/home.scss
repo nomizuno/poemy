@@ -34,7 +34,7 @@ a{
 /* 共通レイアウト ==========================*/
 .body {
   color: #2d3133;
-  background-color: #3ecdc6;
+  background-color: white;
   margin: 0;
   min-height: 1vh;
   }
@@ -45,7 +45,7 @@ a{
   width: 100%;
   height:auto;
   min-height: 100%;
-  background-color:#f5f8fa;
+  background-color: white;
   }
 
   .container{
@@ -120,71 +120,141 @@ header{
 }
 .top-message h1{
   font-size:200px;
-  font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック"; font-weight: bold;
+  letter-spacing: -0.1em;
 }
 .top-message h2{
   font-size:40px;
-  font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック"; font-weight: bold;
 }
 .middle-message{
   font-size:50px;
-  font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック"; font-weight: bold;
   margin-top:10px;
-}
-.top-contents{
-  padding:30px 50px 0px 50px;
-
-}
-.top-content{
-  width:100%;
-  height:300px;
-}
-.img-left{
-  width:25%;
-  float:left;
-}
-.img-right{
-  width:25%;
-  float:right;
-}
-.content-message-left{
-  font-size:20px;
-  font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック"; font-weight: bold;
-  line-height:50px;
-  float:left;
-  text-align:left;
-  padding-top:30px;
-  padding-left:20px;
-}
-.content-message-right{
-  font-size:20px;
-  font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック"; font-weight: bold;
-  line-height:50px;
-  float:right;
-  text-align:right;
-  padding-top:30px;
-  padding-right:20px;
-}
-.blank2{
-  width:25%;
-  height:100px;
-  float:left;
-}
-.blank3{
-  width:25%;
-  height:100px;
-  float:right;
 }
 /* about ================================ */
 .about-main{
-  padding:180px 8% 0;
+  padding:64px 0% 0;
+  width:100%;
+  margin:0 auto;
+  margin-bottom: 30px;
+.about-top{
+  background-color:black;
+  color:white;
+  width:100%;
+  height:auto;
+  text-align: center;
+  padding:30px 0;
+  margin-bottom: 30px;
 
+h1{
+  font-size: 50px;
+  margin-bottom: 10px;
+	}
+	}
 
 .about-content{
-   padding:10px 10px;
+  padding:20px 10px;
+  text-align: center;
+  animation: fadeIn 4s ease 0s 1 alternate none running;
 }
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+.about-message{
+  margin-top:30px;
+  text-align: center;
+  position: relative;
+h1{
+  font-size:40px;	
+}
+	}
+.obj-1{
+	height:40px;
+	width:auto;
+	animation: slideV 5s ease 0s infinite alternate none running;
+}
+.obj-2{
+	height:60px;
+	width:auto;
+	position: absolute;
+	top:700px;
+	left:1000px;
+	animation: fade 2s ease 0s infinite alternate none running;
+}
+.obj-3{
+	height:50px;
+	width:auto;
+	animation: slideH 10s ease 0s infinite normal none running;
+}
+.obj-4{
+	height:30px;
+	width:auto;
+	position: absolute;
+	top:700px;
+	left:150px;
+	animation: change 3s ease 0s infinite alternate none running;
+}
+@keyframes slideV {
+  0% {
+    position: absolute;
+	top:200px;
+  }
 
+  50% {
+    position: absolute;
+	top:300px;
+  }
 
+  100% {
+    position: absolute;
+	top:400px;
+  }
+	}
+@keyframes fade {
+  0% {opacity: 0;
+  }
+
+  100% {opacity: 1;
+  }
+}
+@keyframes slideH {
+  0% {
+    position: absolute;
+	top:400px;
+	left:1500px;
+  }
+
+  50% {
+    position: absolute;
+	top:400px;
+	left:700px;
+	transform:rotate(70deg);
+  }
+
+  100% {
+    position: absolute;
+	top:400px;
+	left:0px;
+  }
+	}
+@keyframes change {
+  0% {
+    height:60px;
+  }
+  100% {
+    height:100px;
+  }
+	}
+.about-end{
+　　max-width: 100%;
+   text-align: center;
+	img{
+   height:150px;	
+	}
+	}
+.about-link{
+   font-size:0px;
+   text-align: center;
+	}
 }
 
 /* フォーム================================ */
