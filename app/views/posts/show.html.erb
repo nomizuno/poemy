@@ -1,7 +1,5 @@
-
 <div class ="main posts-show">
-	<div class ="show-contaniner">
-		
+  <div class ="show-contaniner">
 		<div class ="posts-show-item">
 			<div class ="post-word">
 				<h3>
@@ -10,11 +8,10 @@
 				<h2>
 					【<%= @post.content %>】
 				</h2>
-				
-
 			</div>
 
-			<% @comments.each do |comment| %>
+
+      <% @comments.each do |comment| %>
 			  <div class ="posts-comments">
 
 				  <%= link_to(comment.content, "/users/#{comment.user_id}") %>
@@ -28,9 +25,7 @@
 				      <%= link_to("/likes/#{comment.id}/create",{method:"post"}) do %>
 				        <span class = "fa fa-heart like-btn-unlike"></span>
 				      <% end %>
-
-
-				    <% end %>
+            <% end %>
 
             <% if comment.user_id == @current_user.id %>
               <%= link_to("削除","/comments/#{comment.id}/destroy",{method:"post"}) %>
@@ -40,39 +35,38 @@
 				    <%= link_to("/users/signup") do %>
 				      <span class = "fa fa-heart like-btn"></span> 
 				    <% end %>
-				
+				  <% end %>
 				    <% @likes_count = Like.where(comment_id: comment.id).count %>
 				    <%= @likes_count %>
 				   
-          <% end %>
-			  </div>
+          </div>
 			
-
-		</div>
+          
    
-    <% if session[:user_id] %>
+           <% if session[:user_id] %>
     
-		<div class ="form comment-form">
+		         <div class ="form comment-form">
 			
-			<%= form_tag("/comments/#{@post.id}/create")do %>
-			<div class="form">
-				<div class="form-body">
+			         <%= form_tag("/comments/#{@post.id}/create")do %>
+			         <div class="form">
+				         <div class="form-body">
 
-					<textarea name="content"></textarea>
-					<input type ="submit" value="投稿">
-				</div>
-			</div>
-			<% end %>
+					         <textarea name="content"></textarea>
+					         <input type ="submit" value="投稿">
+				         </div>
+			         </div>
+			         <% end %>
+             </div>
+		       <% else %>
+		         <div class = "Induction" >
+		           <%= link_to("投稿してみる?","/users/signup") %>
+		         </div>
+          <% end %>
 
 
-
-		</div>
-		<% else %>
-		<div class = "Induction" >
-		<%= link_to("投稿してみる?","/users/signup") %>
+       <% end %>
 		
-		</div>
-    <% end %>
 
-	</div>
-
+			
+ </div>
+</div>
