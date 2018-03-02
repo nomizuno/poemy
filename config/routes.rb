@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-	
+  
+  devise_for :users
+	root "home#top"
+
   get 'users/show'
 
   get 'posts/index'
@@ -19,16 +22,8 @@ Rails.application.routes.draw do
  # post "posts/:id/destroy" => "posts#destroy"
 
   
-  get "users/signup" => "users#new"
-  post "users/create" => "users#create"
-  get "users/:id/edit" => "users#edit"
-  post "users/:id/update" => "users#update"
-  get "users/:id" => "users#show"
+  
 
-
-  get "login" => "users#login_form"
-  post "login" => "users#login"
-  post "logout" => "users#logout"
 
   post "comments/:id/create" => "comments#create"
   post "comments/:id/destroy" => "comments#destroy"
