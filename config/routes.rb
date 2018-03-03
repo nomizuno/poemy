@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 	root "home#top"
 
-  get 'users/show'
+  
 
   get 'posts/index'
 
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
  # post "posts/:id/destroy" => "posts#destroy"
 
   
-  
+  get "users/:id" => "users#show"
 
 
   post "comments/:id/create" => "comments#create"

@@ -60,13 +60,21 @@
 
 
 
-    <li>
+    
     <% if user_signed_in? %>
-    <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
-    <% else %>
-     <p><%= link_to "ログイン", "/users/sign_in" %></p>
-  <% end %>
+    <li>
+      <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
     </li>
+
+    <li>
+      <%= link_to(current_user.id,  "/users/#{current_user.id}" ) %></p>
+    </li>
+    <% else %>
+    <li>
+     <p><%= link_to "ログイン", "/users/sign_in" %></p>
+   </li>
+  <% end %>
+   
 
     
 
