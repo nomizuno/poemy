@@ -2,12 +2,14 @@
   <div class ="show-contaniner">
 		<div class ="posts-show-item">
 			<div class ="post-word">
-				<h3>
-					<%= @post.reading %>
-				</h3>
+				
 				<h2>
 					【<%= @post.content %>】
 				</h2>
+
+				<h3>
+					<%= @post.reading %>
+				</h3>
 			</div>
 
 
@@ -16,8 +18,8 @@
 
 				  <%= link_to(comment.content, "/users/#{comment.user_id}") %>
 
-				  <% if session[:user_id] %>
-				    <% if Like.find_by(user_id: @current_user.id, comment_id: comment.id) %>
+				  <% if user_signed_in? %>
+				    <% if Like.find_by(user_id: current_user.id, comment_id: comment.id) %>
 				      <%= link_to("/likes/#{comment.id}/destroy",{method:"post"}) do %>
 				        <span class = "fa fa-heart like-btn"></span> 
 				      <% end %>
@@ -27,7 +29,7 @@
 				      <% end %>
             <% end %>
 
-            <% if comment.user_id == @current_user.id %>
+            <% if comment.user_id == current_user.id %>
               <%= link_to("削除","/comments/#{comment.id}/destroy",{method:"post"}) %>
             <% end %>
 				  <% else %>
@@ -41,9 +43,9 @@
 				   
           </div>
 			
-          
+          </div>
    
-           <% if session[:user_id] %>
+           <% if user_signed_in? %>
     
 		         <div class ="form comment-form">
 			
