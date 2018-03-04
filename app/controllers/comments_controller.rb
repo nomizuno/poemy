@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
 	def create
 		@comment=Comment.new(content: params[:content],
-			user_id: @current_user.id,
+			user_id: current_user.id,
 			post_id: params[:id])
 		@comment.save
 		if @comment.save

@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post=Post.new(content: params[:content],
-			user_id: @current_user.id,
+			user_id: current_user.id,
 			reading: params[:reading])
 		@post.save
 	  if @post.save
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
 
     def show
      @post = Post.find_by(id: params[:id])
-     @comments = Comment.where(post_id: @post.id).order("likes_count desc")
+     @comments = Comment.where(post_id: @post.id).order("likes_count desc").limit(3)
     end
 
 end

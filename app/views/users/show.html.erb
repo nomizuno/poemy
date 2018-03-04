@@ -4,11 +4,12 @@
 
 		<div class ="user">
 			<img src= "<%= "/user_images/#{@user.image_name}" %>" >
-			<h2><%= @user.name %></h2>
-			<h3>id:<%= @user.poemy_id %></h3>
+			<h2><%= @user.username %></h2>
+			
 			<div class ="user-edit-bottun">
-			  <% if session[:user_id] %>
-				<% if @user.id == @current_user.id %>
+			  <% if user_signed_in? %>
+				<% if @user.id == current_user.id %>
+				<p><%= @user.email %></p>
 				<%= link_to("編集","/users/#{@user.id}/edit") %>
 				<% end %>
 			<% end %>
@@ -18,7 +19,7 @@
 			
 		</div>
 
-    <ul class="user-tabs">
+        <ul class="user-tabs">
 			<li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
 			
 		</ul>

@@ -1,15 +1,6 @@
 class User < ApplicationRecord
-	validates :email, {presence: true, uniqueness: true}
-	validates :name, {presence: true,  uniqueness: true}
-	validates :password, {presence: true}
-	validates :poemy_id, {presence: true, uniqueness: true}
-    
-  
-	
-
-	def posts
-		return Post.where(user_id: self.id)
-	end
-
-
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable,:confirmable
 end
