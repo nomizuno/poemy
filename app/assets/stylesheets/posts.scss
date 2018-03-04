@@ -7,25 +7,26 @@
 
 
 .posts-show-item{
-    height: 200px;
-	
-	margin:50px 0 20px 0px;
+
+   max-width: 600px;
+  margin: 0 auto;
+  margin-top:50px;
 
 
 
   .post-word{
-   width:700px;
-    background-color: #fff8e8;
+   width:600px;
+   
     text-align:center;
   }
 	
   .posts-comments{
-    width:700px;
+    width:600px;
   
    padding: 0.2em 1em;
     margin: 0.1em 0;
     color: #232323;
-    background: #fff8e8;
+    
     border-left: solid 10px #ffc06e;
    
   }
@@ -45,7 +46,7 @@
  padding: 0.2em 1em;
     margin: 0.1em 0;
     color: #232323;
-    background: #fff8e8;
+  
     border-left: solid 10px #ffc06e;
 
   
