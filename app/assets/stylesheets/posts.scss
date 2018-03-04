@@ -2,73 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/*
-.show-container{
-  max-width: 600px;
-  margin:0px;
-  clear:both;
 
-}
-.posts-show {
-margin: 50px 100px 100px 100px; 
-background-image: url("../assets/wordpage_background2_copy.png");
-background-size:contain;
-background-repeat:no-repeat;
-height: 900px;
 
-}
 
 .posts-show-item{
-	margin:300px 300px 0 300px;
-}
-
-.posts-comments {
-padding-top:0px;
-text-align: center;
-font-size:10px;
-padding-top:10px;
+    height: 200px;
 	
-}
-
-.post-word {
-flaot:center;
-width:70%;
-background-color: black;
-color:white; 
-text-align:center;
+	margin:50px 0 20px 0px;
 
 
 
-h2{
-margin-top: 290px;
-font-size:70px;
-margin:0;
-}
-
-h3{
-margin:0;
-padding-top:0px;
-font-size:30px;
-}
-
-p{
-
-margin:0;
-padding-top:0px;
-font-size:30px;
- }
-
-}
-*/
-
-/* posts/show いいね!ボタン ================================ */
+  .post-word{
+    
+  }
 	
-.like-btn {
-  color: #8899a6;
+  .posts-comments{
+    width:700px;
+  
+   
+   
+  }
+
+
+
 }
 
-.like-btn-unlike {
-  color: #ff2581;
+.form-body{
+	margin:100px 0;
 }
 
 
