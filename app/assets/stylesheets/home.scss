@@ -92,6 +92,17 @@ header{
   padding-left:15px;
 }
 
+#acMenu dt{
+    display:block;
+    
+    text-align:center;
+    cursor:pointer;
+    }
+
+#acMenu dd{
+ display:none;
+}
+
 /* top ================================ */
 .top-main{
 	padding:0px 0 0px;
