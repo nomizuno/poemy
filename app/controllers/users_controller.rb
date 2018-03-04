@@ -14,16 +14,20 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find_by(id: params[:id])
-    if @user.image_name == nil
-      @user.image_name = "default_user.jpg"
-      @user.save
-    end
+
+    
+      if @user.image_name == nil
+        @user.image_name = "default_user.jpg"
+        @user.save
+      end
 
 
-    if @user.username == nil
-      @user.username = "名無し"
-      @user.save
-    end
+      if @user.username == nil
+        @user.username = "名無し"
+        @user.save
+      end
+
+    
 
     @comments = Comment.where(user_id: @user.id)
     @post_count = Post.where(user_id: @user.id).count

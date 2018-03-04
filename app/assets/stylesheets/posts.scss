@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+/* post/show ================================ */
 
 
 .posts-show-item{
@@ -13,13 +14,19 @@
 
 
   .post-word{
-    
+   width:700px;
+    background-color: #fff8e8;
+    text-align:center;
   }
 	
   .posts-comments{
     width:700px;
   
-   
+   padding: 0.2em 1em;
+    margin: 0.1em 0;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 10px #ffc06e;
    
   }
 
@@ -32,4 +39,15 @@
 }
 
 
+/* post/index ================================ */
+
+.posts-index-item{
+ padding: 0.2em 1em;
+    margin: 0.1em 0;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 10px #ffc06e;
+
+  
+}
 
