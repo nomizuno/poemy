@@ -5,6 +5,9 @@ class CommentsController < ApplicationController
 		@comment=Comment.new(content: params[:content],
 			user_id: current_user.id,
 			post_id: params[:id])
+
+    @comment.likes_count = 0
+    
 		@comment.save
 		if @comment.save
            #保存できた場合
