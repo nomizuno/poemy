@@ -41,31 +41,22 @@
 				</div>
 			</div>
        <% end %>
-            <div >
-              <%= link_to("/posts/#{@post.id}/all") do %>
-				  <i class="fa fa-angle-double-down"></i>
+              <div >
+               <%= link_to("/posts/#{@post.id}") do %>
+				  <i class="fa fa-angle-double-up"></i>
 			　　<% end %> 
-            </div>
+              </div>
 		 </div> 
    </div>
+    
 
    <% if user_signed_in? %>
-		<div class ="form comment-form">
-			
-			<%= form_tag("/comments/#{@post.id}/create")do %>
-			<div class="form">
-				<div class="form-body">
-					<textarea name="content"></textarea>
-					<input type ="submit" value="投稿">
-				</div>
-			</div>
-			<% end %>
-		</div>
+		
 	 <% else %>
 	   <div class = "Induction" >
 		   <%= link_to("投稿してみる?","/users/sign_in") %>
 		 </div>
    <% end %>
-
-
+    
+  
 </div>

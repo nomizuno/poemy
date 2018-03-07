@@ -51,4 +51,9 @@ class PostsController < ApplicationController
      @comments = Comment.where(post_id: @post.id).order("likes_count desc").limit(3)
     end
 
+     def show_all
+     @post = Post.find_by(id: params[:id])
+     @comments = Comment.where(post_id: @post.id).order("likes_count desc")
+    end
+
 end
